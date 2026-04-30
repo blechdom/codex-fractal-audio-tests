@@ -207,7 +207,7 @@ export default function FractalDataGeneratorModelPage() {
           )}
           <div className="presets">
             <span className="presets-label">Data</span>
-            {(["fractal", "stripes", "checkerboard", "polka-dots"] as DataSourceKind[]).map((source) => (
+            {(["fractal"] as DataSourceKind[]).map((source) => (
               <button
                 key={source}
                 className="preset-btn"

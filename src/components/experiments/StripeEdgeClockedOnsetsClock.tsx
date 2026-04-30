@@ -320,7 +320,7 @@ export function StripeEdgeClockedOnsetsClock() {
         )}
         <div className="presets">
           <span className="presets-label">Data</span>
-          {(["fractal", "stripes", "checkerboard", "polka-dots"] as DataSourceKind[]).map((s) => (
+          {(["fractal"] as DataSourceKind[]).map((s) => (
             <button key={s} className="preset-btn" onClick={() => setDataSource(s)} style={s === dataSource ? { borderColor: ACCENT, color: ACCENT } : undefined}>
               {s}
             </button>

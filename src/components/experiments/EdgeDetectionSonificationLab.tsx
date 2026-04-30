@@ -463,7 +463,7 @@ export function EdgeDetectionSonificationLab() {
         <Slider label="Max Iter" value={maxIter} min={40} max={420} step={1} onChange={setMaxIter} />
         <div className="presets">
           <span className="presets-label">Data</span>
-          {(["fractal", "stripes", "checkerboard", "polka-dots"] as DataSourceKind[]).map((source) => (
+          {(["fractal"] as DataSourceKind[]).map((source) => (
             <button
               key={source}
               className="preset-btn"

@@ -278,7 +278,7 @@ export function FractalCirclePackingDemo() {
         <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
         <div className="presets">
           <span className="presets-label">Data</span>
-          {(["fractal", "stripes", "checkerboard", "polka-dots"] as DataSourceKind[]).map((source) => (
+          {(["fractal"] as DataSourceKind[]).map((source) => (
             <button
               key={source}
               className="preset-btn"
