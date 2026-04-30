@@ -69,7 +69,7 @@ export function EdgeDetectionSonificationLab() {
   const [playing, setPlaying] = useState(false);
   const [mode, setMode] = useState<PlayMode>("clocked");
   const [output, setOutput] = useState(0.7);
-  const [zoom, setZoom] = useState(0.48);
+  const [zoom, setZoom] = useState(1);
   const [maxIter, setMaxIter] = useState(220);
   const [dataSource, setDataSource] = useState<DataSourceKind>("fractal");
   const [patternScale, setPatternScale] = useState(5.5);
@@ -78,7 +78,7 @@ export function EdgeDetectionSonificationLab() {
   const [fractalType, setFractalType] = useState<FractalKind>("mandelbrot");
   const [juliaCx, setJuliaCx] = useState(-0.8);
   const [juliaCy, setJuliaCy] = useState(0.156);
-  const [resolution, setResolution] = useState(160);
+  const [resolution, setResolution] = useState(320);
   const [lanes, setLanes] = useState(8);
   const [steps, setSteps] = useState(32);
   const [bpm, setBpm] = useState(110);

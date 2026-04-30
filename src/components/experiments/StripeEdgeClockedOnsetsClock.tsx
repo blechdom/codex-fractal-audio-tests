@@ -80,7 +80,7 @@ function buildGraph(
 export function StripeEdgeClockedOnsetsClock() {
   const [playing, setPlaying] = useState(false);
   const [output, setOutput] = useState(0.58);
-  const [zoom, setZoom] = useState(0);
+  const [zoom, setZoom] = useState(1);
   const [maxIter, setMaxIter] = useState(160);
   const [dataSource, setDataSource] = useState<DataSourceKind>("fractal");
   const [patternScale, setPatternScale] = useState(5.5);
@@ -98,7 +98,7 @@ export function StripeEdgeClockedOnsetsClock() {
   const [decayMs, setDecayMs] = useState(140);
   const [playheadMode, setPlayheadMode] = useState<PlayheadMode>("multi-circle");
   const [playheadCount, setPlayheadCount] = useState(4);
-  const [resolution, setResolution] = useState(180);
+  const [resolution, setResolution] = useState(320);
   const [stripeThreshold, setStripeThreshold] = useState(0.5);
   const [edgeThreshold, setEdgeThreshold] = useState(0.24);
   const [frameSeed, setFrameSeed] = useState(0);

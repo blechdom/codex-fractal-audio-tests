@@ -70,7 +70,7 @@ interface Props {
 function StripeEdgeClockedOnsetsCore({ advanced = false, title = "Stripe / Edge Clocked Onsets V2" }: Props) {
   const [playing, setPlaying] = useState(false);
   const [output, setOutput] = useState(advanced ? 0.58 : 0.7);
-  const [zoom, setZoom] = useState(0);
+  const [zoom, setZoom] = useState(1);
   const [maxIter, setMaxIter] = useState(140);
   const [dataSource, setDataSource] = useState<DataSourceKind>("fractal");
   const [patternScale, setPatternScale] = useState(5.5);
@@ -90,7 +90,7 @@ function StripeEdgeClockedOnsetsCore({ advanced = false, title = "Stripe / Edge 
   const [crossfadeShape, setCrossfadeShape] = useState(1.0);
   const [toneMix, setToneMix] = useState(advanced ? 0.36 : 0.42);
   const [noiseMix, setNoiseMix] = useState(advanced ? 0.08 : 0.16);
-  const [resolution, setResolution] = useState(160);
+  const [resolution, setResolution] = useState(320);
   const [stripeThreshold, setStripeThreshold] = useState(0.5);
   const [edgeThreshold, setEdgeThreshold] = useState(0.25);
   const [decayMs, setDecayMs] = useState(120);

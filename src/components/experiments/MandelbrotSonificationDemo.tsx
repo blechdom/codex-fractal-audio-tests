@@ -134,7 +134,7 @@ export function MandelbrotSonificationDemo({ slug }: Props) {
   const isBoundaryStrategy = slug === "boundary-transients";
   const [playing, setPlaying] = useState(false);
   const [output, setOutput] = useState(0.65);
-  const [zoom, setZoom] = useState(0);
+  const [zoom, setZoom] = useState(1);
   const [scan, setScan] = useState(0.5);
   const [maxIter, setMaxIter] = useState(120);
   const [autopilot, setAutopilot] = useState(false);

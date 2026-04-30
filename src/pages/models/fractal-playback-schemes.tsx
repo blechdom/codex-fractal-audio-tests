@@ -26,8 +26,8 @@ export default function FractalPlaybackSchemesModelPage() {
   const [juliaCy, setJuliaCy] = useState(0.156);
   const [patternScale, setPatternScale] = useState(5.5);
 
-  const [resolution, setResolution] = useState(240);
-  const [zoom, setZoom] = useState(0.42);
+  const [resolution, setResolution] = useState(420);
+  const [zoom, setZoom] = useState(1);
   const [centerX, setCenterX] = useState(-0.74364388703);
   const [centerY, setCenterY] = useState(0.13182590421);
   const [maxIter, setMaxIter] = useState(220);

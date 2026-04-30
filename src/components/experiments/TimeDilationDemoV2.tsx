@@ -154,7 +154,7 @@ function TimeDilationCore({ title, defaultMappingMode }: TimeDilationCoreProps) 
   const [mappingMode, setMappingMode] = useState<MappingMode>(defaultMappingMode);
   const [zonesCount, setZonesCount] = useState(5);
   const [baseBpm, setBaseBpm] = useState(96);
-  const [zoom, setZoom] = useState(0.55);
+  const [zoom, setZoom] = useState(1);
   const [migrationDepth, setMigrationDepth] = useState(1);
   const [maxIter, setMaxIter] = useState(220);
   const [centerX, setCenterX] = useState(-0.74364388703);

@@ -55,7 +55,7 @@ function buildGraph(
 export function StripeEdgeClockedOnsets() {
   const [playing, setPlaying] = useState(false);
   const [output, setOutput] = useState(0.7);
-  const [zoom, setZoom] = useState(0);
+  const [zoom, setZoom] = useState(1);
   const [maxIter, setMaxIter] = useState(140);
   const [dataSource, setDataSource] = useState<DataSourceKind>("fractal");
   const [patternScale, setPatternScale] = useState(5.5);
@@ -67,7 +67,7 @@ export function StripeEdgeClockedOnsets() {
   const [bpm, setBpm] = useState(110);
   const [steps, setSteps] = useState(32);
   const [lanes, setLanes] = useState(8);
-  const [resolution, setResolution] = useState(128);
+  const [resolution, setResolution] = useState(256);
   const [stripeThreshold, setStripeThreshold] = useState(0.5);
   const [edgeThreshold, setEdgeThreshold] = useState(0.25);
   const [decayMs, setDecayMs] = useState(120);

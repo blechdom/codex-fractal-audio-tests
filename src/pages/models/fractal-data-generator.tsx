@@ -19,8 +19,8 @@ const ACCENT = "#f4a261";
 
 export default function FractalDataGeneratorModelPage() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [resolution, setResolution] = useState(240);
-  const [zoom, setZoom] = useState(0.38);
+  const [resolution, setResolution] = useState(420);
+  const [zoom, setZoom] = useState(1);
   const [maxIter, setMaxIter] = useState(220);
   const [centerX, setCenterX] = useState(-0.74364388703);
   const [centerY, setCenterY] = useState(0.13182590421);

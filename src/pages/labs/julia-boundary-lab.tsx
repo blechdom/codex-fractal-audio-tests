@@ -29,7 +29,7 @@ export default function JuliaBoundaryLabPage() {
   const [output, setOutput] = useState(0.6);
   const [scanHz, setScanHz] = useState(16);
   const [noiseMix, setNoiseMix] = useState(0.17);
-  const [zoom, setZoom] = useState(0.42);
+  const [zoom, setZoom] = useState(1);
   const [maxIter, setMaxIter] = useState(260);
   const [centerX, setCenterX] = useState(0);
   const [centerY, setCenterY] = useState(0);

@@ -16,8 +16,8 @@ const ACCENT = "#ff9f1c";
 
 export default function RecursivePlotColorPlayheadsV1Page() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [resolution, setResolution] = useState(260);
-  const [zoom, setZoom] = useState(0.42);
+  const [resolution, setResolution] = useState(420);
+  const [zoom, setZoom] = useState(1);
   const [maxIter, setMaxIter] = useState(220);
   const [centerX, setCenterX] = useState(-0.74364388703);
   const [centerY, setCenterY] = useState(0.13182590421);

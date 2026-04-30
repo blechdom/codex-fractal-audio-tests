@@ -45,11 +45,11 @@ export function FractalCirclePackingDemo() {
   const [playing, setPlaying] = useState(false);
   const [output, setOutput] = useState(0.8);
   const [bpm, setBpm] = useState(115);
-  const [zoom, setZoom] = useState(0.55);
+  const [zoom, setZoom] = useState(1);
   const [maxIter, setMaxIter] = useState(220);
   const [dataSource, setDataSource] = useState<DataSourceKind>("fractal");
   const [patternScale, setPatternScale] = useState(5.5);
-  const [resolution, setResolution] = useState(256);
+  const [resolution, setResolution] = useState(512);
   const [maxCircles, setMaxCircles] = useState(36);
   const [minRadius, setMinRadius] = useState(4);
   const [maxRadius, setMaxRadius] = useState(18);
