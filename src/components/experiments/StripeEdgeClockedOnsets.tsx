@@ -55,7 +55,7 @@ function buildGraph(
 export function StripeEdgeClockedOnsets() {
   const [playing, setPlaying] = useState(false);
   const [output, setOutput] = useState(0.7);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(2);
   const [maxIter, setMaxIter] = useState(140);
   const [dataSource, setDataSource] = useState<DataSourceKind>("fractal");
   const [patternScale, setPatternScale] = useState(5.5);
@@ -67,7 +67,7 @@ export function StripeEdgeClockedOnsets() {
   const [bpm, setBpm] = useState(110);
   const [steps, setSteps] = useState(32);
   const [lanes, setLanes] = useState(8);
-  const [resolution, setResolution] = useState(256);
+  const [resolution, setResolution] = useState(512);
   const [stripeThreshold, setStripeThreshold] = useState(0.5);
   const [edgeThreshold, setEdgeThreshold] = useState(0.25);
   const [decayMs, setDecayMs] = useState(120);
@@ -304,8 +304,8 @@ export function StripeEdgeClockedOnsets() {
         <Slider label="BPM" value={bpm} min={40} max={220} step={1} onChange={setBpm} />
         <Slider label="Steps" value={steps} min={8} max={64} step={1} onChange={setSteps} />
         <Slider label="Lanes" value={lanes} min={2} max={12} step={1} onChange={setLanes} />
-        <Slider label="Resolution" value={resolution} min={48} max={256} step={1} onChange={setResolution} />
-        <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
+        <Slider label="Resolution" value={resolution} min={48} max={512} step={1} onChange={setResolution} />
+        <Slider label="Zoom" value={zoom} min={0} max={2} step={0.001} onChange={setZoom} />
         <Slider label="Max Iter" value={maxIter} min={40} max={360} step={1} onChange={setMaxIter} />
         <div className="presets">
           <span className="presets-label">Data</span>

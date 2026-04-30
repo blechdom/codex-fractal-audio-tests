@@ -70,7 +70,7 @@ interface Props {
 function StripeEdgeClockedOnsetsCore({ advanced = false, title = "Stripe / Edge Clocked Onsets V2" }: Props) {
   const [playing, setPlaying] = useState(false);
   const [output, setOutput] = useState(advanced ? 0.58 : 0.7);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(2);
   const [maxIter, setMaxIter] = useState(140);
   const [dataSource, setDataSource] = useState<DataSourceKind>("fractal");
   const [patternScale, setPatternScale] = useState(5.5);
@@ -90,7 +90,7 @@ function StripeEdgeClockedOnsetsCore({ advanced = false, title = "Stripe / Edge 
   const [crossfadeShape, setCrossfadeShape] = useState(1.0);
   const [toneMix, setToneMix] = useState(advanced ? 0.36 : 0.42);
   const [noiseMix, setNoiseMix] = useState(advanced ? 0.08 : 0.16);
-  const [resolution, setResolution] = useState(320);
+  const [resolution, setResolution] = useState(640);
   const [stripeThreshold, setStripeThreshold] = useState(0.5);
   const [edgeThreshold, setEdgeThreshold] = useState(0.25);
   const [decayMs, setDecayMs] = useState(120);
@@ -507,7 +507,7 @@ function StripeEdgeClockedOnsetsCore({ advanced = false, title = "Stripe / Edge 
             width: "100%",
             maxWidth: 520,
             aspectRatio: "1 / 1",
-            imageRendering: "pixelated",
+            imageRendering: "auto",
             borderRadius: 4,
             border: "1px solid #1d1d1d",
             background: "#080808",
@@ -523,7 +523,7 @@ function StripeEdgeClockedOnsetsCore({ advanced = false, title = "Stripe / Edge 
             width: "100%",
             maxWidth: 520,
             aspectRatio: "1 / 1",
-            imageRendering: "pixelated",
+            imageRendering: "auto",
             borderRadius: 4,
             border: "1px solid #1d1d1d",
             background: "#080808",
@@ -645,8 +645,8 @@ function StripeEdgeClockedOnsetsCore({ advanced = false, title = "Stripe / Edge 
           />
           Square lock (steps == lanes)
         </label>
-        <Slider label="Resolution" value={resolution} min={64} max={320} step={1} onChange={setResolution} />
-        <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
+        <Slider label="Resolution" value={resolution} min={64} max={640} step={1} onChange={setResolution} />
+        <Slider label="Zoom" value={zoom} min={0} max={2} step={0.001} onChange={setZoom} />
         <Slider label="Max Iter" value={maxIter} min={40} max={360} step={1} onChange={setMaxIter} />
         <div className="presets">
           <span className="presets-label">Data</span>

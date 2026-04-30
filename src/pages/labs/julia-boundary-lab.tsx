@@ -29,7 +29,7 @@ export default function JuliaBoundaryLabPage() {
   const [output, setOutput] = useState(0.6);
   const [scanHz, setScanHz] = useState(16);
   const [noiseMix, setNoiseMix] = useState(0.17);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(2);
   const [maxIter, setMaxIter] = useState(260);
   const [centerX, setCenterX] = useState(0);
   const [centerY, setCenterY] = useState(0);
@@ -239,7 +239,7 @@ export default function JuliaBoundaryLabPage() {
           style={{
             width: "100%",
             maxWidth: 860,
-            imageRendering: "pixelated",
+            imageRendering: "auto",
             border: "1px solid #222",
             borderRadius: 6,
             background: "#090909",
@@ -265,7 +265,7 @@ export default function JuliaBoundaryLabPage() {
           <Slider label="Noise Mix" value={noiseMix} min={0} max={1} step={0.01} onChange={setNoiseMix} />
           <Slider label="Output" value={output} min={0} max={1} step={0.01} onChange={setOutput} />
           <Slider label="Boundary Th" value={boundaryThreshold} min={0} max={1} step={0.001} onChange={setBoundaryThreshold} />
-          <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
+          <Slider label="Zoom" value={zoom} min={0} max={2} step={0.001} onChange={setZoom} />
           <Slider label="Max Iter" value={maxIter} min={40} max={600} step={1} onChange={setMaxIter} />
           <Slider label="Center X" value={centerX} min={-2.2} max={2.2} step={0.00001} onChange={setCenterX} />
           <Slider label="Center Y" value={centerY} min={-2.2} max={2.2} step={0.00001} onChange={setCenterY} />

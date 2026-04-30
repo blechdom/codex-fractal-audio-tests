@@ -80,7 +80,7 @@ function buildGraph(
 export function StripeEdgeClockedOnsetsClock() {
   const [playing, setPlaying] = useState(false);
   const [output, setOutput] = useState(0.58);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(2);
   const [maxIter, setMaxIter] = useState(160);
   const [dataSource, setDataSource] = useState<DataSourceKind>("fractal");
   const [patternScale, setPatternScale] = useState(5.5);
@@ -98,7 +98,7 @@ export function StripeEdgeClockedOnsetsClock() {
   const [decayMs, setDecayMs] = useState(140);
   const [playheadMode, setPlayheadMode] = useState<PlayheadMode>("multi-circle");
   const [playheadCount, setPlayheadCount] = useState(4);
-  const [resolution, setResolution] = useState(320);
+  const [resolution, setResolution] = useState(640);
   const [stripeThreshold, setStripeThreshold] = useState(0.5);
   const [edgeThreshold, setEdgeThreshold] = useState(0.24);
   const [frameSeed, setFrameSeed] = useState(0);
@@ -264,7 +264,7 @@ export function StripeEdgeClockedOnsetsClock() {
         ref={canvasRef}
         width={visual.width}
         height={visual.height}
-        style={{ width: "100%", maxWidth: 720, imageRendering: "pixelated", border: "1px solid #222", borderRadius: 6 }}
+        style={{ width: "100%", maxWidth: 720, imageRendering: "auto", border: "1px solid #222", borderRadius: 6 }}
       />
 
       <div
@@ -359,8 +359,8 @@ export function StripeEdgeClockedOnsetsClock() {
         <Slider label="Noise Mix" value={noiseMix} min={0} max={1} step={0.01} onChange={setNoiseMix} />
         <Slider label="Attack" value={attackMs} min={1} max={40} step={1} unit="ms" onChange={setAttackMs} />
         <Slider label="Decay" value={decayMs} min={20} max={500} step={1} unit="ms" onChange={setDecayMs} />
-        <Slider label="Resolution" value={resolution} min={64} max={320} step={1} onChange={setResolution} />
-        <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
+        <Slider label="Resolution" value={resolution} min={64} max={640} step={1} onChange={setResolution} />
+        <Slider label="Zoom" value={zoom} min={0} max={2} step={0.001} onChange={setZoom} />
         <Slider label="Max Iter" value={maxIter} min={40} max={420} step={1} onChange={setMaxIter} />
         <Slider label="Center X" value={centerX} min={-2.2} max={1} step={0.00001} onChange={setCenterX} />
         <Slider label="Center Y" value={centerY} min={-1.4} max={1.4} step={0.00001} onChange={setCenterY} />

@@ -69,7 +69,7 @@ export function EdgeDetectionSonificationLab() {
   const [playing, setPlaying] = useState(false);
   const [mode, setMode] = useState<PlayMode>("clocked");
   const [output, setOutput] = useState(0.7);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(2);
   const [maxIter, setMaxIter] = useState(220);
   const [dataSource, setDataSource] = useState<DataSourceKind>("fractal");
   const [patternScale, setPatternScale] = useState(5.5);
@@ -78,7 +78,7 @@ export function EdgeDetectionSonificationLab() {
   const [fractalType, setFractalType] = useState<FractalKind>("mandelbrot");
   const [juliaCx, setJuliaCx] = useState(-0.8);
   const [juliaCy, setJuliaCy] = useState(0.156);
-  const [resolution, setResolution] = useState(320);
+  const [resolution, setResolution] = useState(640);
   const [lanes, setLanes] = useState(8);
   const [steps, setSteps] = useState(32);
   const [bpm, setBpm] = useState(110);
@@ -406,7 +406,7 @@ export function EdgeDetectionSonificationLab() {
           style={{
             width: "100%",
             maxWidth: 520,
-            imageRendering: "pixelated",
+            imageRendering: "auto",
             border: "1px solid #1d1d1d",
             borderRadius: 4,
             display: "block",
@@ -458,8 +458,8 @@ export function EdgeDetectionSonificationLab() {
         <Slider label="BPM" value={bpm} min={40} max={500} step={1} onChange={setBpm} />
         <Slider label="Steps" value={steps} min={8} max={256} step={1} onChange={setSteps} />
         <Slider label="Lanes" value={lanes} min={2} max={256} step={1} onChange={setLanes} />
-        <Slider label="Resolution" value={resolution} min={64} max={320} step={1} onChange={setResolution} />
-        <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
+        <Slider label="Resolution" value={resolution} min={64} max={640} step={1} onChange={setResolution} />
+        <Slider label="Zoom" value={zoom} min={0} max={2} step={0.001} onChange={setZoom} />
         <Slider label="Max Iter" value={maxIter} min={40} max={420} step={1} onChange={setMaxIter} />
         <div className="presets">
           <span className="presets-label">Data</span>

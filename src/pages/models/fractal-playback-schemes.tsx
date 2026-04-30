@@ -26,8 +26,8 @@ export default function FractalPlaybackSchemesModelPage() {
   const [juliaCy, setJuliaCy] = useState(0.156);
   const [patternScale, setPatternScale] = useState(5.5);
 
-  const [resolution, setResolution] = useState(420);
-  const [zoom, setZoom] = useState(1);
+  const [resolution, setResolution] = useState(840);
+  const [zoom, setZoom] = useState(2);
   const [centerX, setCenterX] = useState(-0.74364388703);
   const [centerY, setCenterY] = useState(0.13182590421);
   const [maxIter, setMaxIter] = useState(220);
@@ -220,7 +220,7 @@ export default function FractalPlaybackSchemesModelPage() {
           style={{
             width: "100%",
             maxWidth: 900,
-            imageRendering: "pixelated",
+            imageRendering: "auto",
             border: "1px solid #222",
             borderRadius: 6,
             background: "#090909",
@@ -416,8 +416,8 @@ export default function FractalPlaybackSchemesModelPage() {
             ))}
           </div>
 
-          <Slider label="Resolution" value={resolution} min={120} max={420} step={1} onChange={setResolution} />
-          <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
+          <Slider label="Resolution" value={resolution} min={120} max={840} step={1} onChange={setResolution} />
+          <Slider label="Zoom" value={zoom} min={0} max={2} step={0.001} onChange={setZoom} />
           <Slider label="Center X" value={centerX} min={-2.2} max={2.2} step={0.00001} onChange={setCenterX} />
           <Slider label="Center Y" value={centerY} min={-2.2} max={2.2} step={0.00001} onChange={setCenterY} />
           <Slider label="Max Iter" value={maxIter} min={40} max={600} step={1} onChange={setMaxIter} />

@@ -134,7 +134,7 @@ export function MandelbrotSonificationDemo({ slug }: Props) {
   const isBoundaryStrategy = slug === "boundary-transients";
   const [playing, setPlaying] = useState(false);
   const [output, setOutput] = useState(0.65);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(2);
   const [scan, setScan] = useState(0.5);
   const [maxIter, setMaxIter] = useState(120);
   const [autopilot, setAutopilot] = useState(false);
@@ -418,7 +418,7 @@ export function MandelbrotSonificationDemo({ slug }: Props) {
             style={{
               width: "100%",
               maxWidth: 480,
-              imageRendering: "pixelated",
+              imageRendering: "auto",
               borderRadius: 4,
               background: "#080808",
               border: "1px solid #1d1d1d",
@@ -441,7 +441,7 @@ export function MandelbrotSonificationDemo({ slug }: Props) {
             ))}
           </div>
           <Slider label="Output" value={output} min={0} max={1} step={0.01} onChange={setOutput} />
-          <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
+          <Slider label="Zoom" value={zoom} min={0} max={2} step={0.001} onChange={setZoom} />
           <Slider label="Scan" value={scan} min={0} max={1} step={0.001} onChange={setScan} />
           <Slider label="Max Iter" value={maxIter} min={40} max={280} step={1} onChange={setMaxIter} />
           <div className="presets">

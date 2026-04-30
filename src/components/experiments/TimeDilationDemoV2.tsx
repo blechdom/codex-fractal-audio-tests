@@ -154,7 +154,7 @@ function TimeDilationCore({ title, defaultMappingMode }: TimeDilationCoreProps) 
   const [mappingMode, setMappingMode] = useState<MappingMode>(defaultMappingMode);
   const [zonesCount, setZonesCount] = useState(5);
   const [baseBpm, setBaseBpm] = useState(96);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(2);
   const [migrationDepth, setMigrationDepth] = useState(1);
   const [maxIter, setMaxIter] = useState(220);
   const [centerX, setCenterX] = useState(-0.74364388703);
@@ -463,7 +463,7 @@ function TimeDilationCore({ title, defaultMappingMode }: TimeDilationCoreProps) 
           style={{
             width: "100%",
             maxWidth: 520,
-            imageRendering: "pixelated",
+            imageRendering: "auto",
             border: "1px solid #1d1d1d",
             borderRadius: 4,
             display: "block",
@@ -587,7 +587,7 @@ function TimeDilationCore({ title, defaultMappingMode }: TimeDilationCoreProps) 
         <Slider label="Output" value={output} min={0} max={1} step={0.01} onChange={setOutput} />
         <Slider label="Zones" value={zonesCount} min={2} max={10} step={1} onChange={setZonesCount} />
         <Slider label="Base BPM" value={baseBpm} min={20} max={240} step={1} onChange={setBaseBpm} />
-        <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
+        <Slider label="Zoom" value={zoom} min={0} max={2} step={0.001} onChange={setZoom} />
         <Slider label="Migrate" value={migrationDepth} min={0} max={1.6} step={0.01} onChange={setMigrationDepth} />
         <Slider label="Max Iter" value={maxIter} min={40} max={500} step={1} onChange={setMaxIter} />
         <Slider label="Center X" value={centerX} min={-2.2} max={1} step={0.00001} onChange={setCenterX} />

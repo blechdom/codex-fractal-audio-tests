@@ -19,8 +19,8 @@ const ACCENT = "#f4a261";
 
 export default function FractalDataGeneratorModelPage() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [resolution, setResolution] = useState(420);
-  const [zoom, setZoom] = useState(1);
+  const [resolution, setResolution] = useState(840);
+  const [zoom, setZoom] = useState(2);
   const [maxIter, setMaxIter] = useState(220);
   const [centerX, setCenterX] = useState(-0.74364388703);
   const [centerY, setCenterY] = useState(0.13182590421);
@@ -172,7 +172,7 @@ export default function FractalDataGeneratorModelPage() {
             style={{
               width: "100%",
               maxWidth: 820,
-              imageRendering: "pixelated",
+              imageRendering: "auto",
               borderRadius: 4,
               border: "1px solid #202020",
               background: "#090909",
@@ -218,8 +218,8 @@ export default function FractalDataGeneratorModelPage() {
               </button>
             ))}
           </div>
-          <Slider label="Resolution" value={resolution} min={96} max={420} step={1} onChange={setResolution} />
-          <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
+          <Slider label="Resolution" value={resolution} min={96} max={840} step={1} onChange={setResolution} />
+          <Slider label="Zoom" value={zoom} min={0} max={2} step={0.001} onChange={setZoom} />
           <Slider label="Max Iter" value={maxIter} min={40} max={500} step={1} onChange={setMaxIter} />
           <Slider label="Center X" value={centerX} min={-2.2} max={1} step={0.00001} onChange={setCenterX} />
           <Slider label="Center Y" value={centerY} min={-1.4} max={1.4} step={0.00001} onChange={setCenterY} />

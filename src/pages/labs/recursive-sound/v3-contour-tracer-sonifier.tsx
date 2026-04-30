@@ -198,7 +198,7 @@ export default function RecursiveContourTracerV3Page() {
           style={{
             width: "100%",
             maxWidth: 860,
-            imageRendering: "pixelated",
+            imageRendering: "auto",
             border: "1px solid #222",
             borderRadius: 6,
             background: "#090909",

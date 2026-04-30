@@ -45,11 +45,11 @@ export function FractalCirclePackingDemo() {
   const [playing, setPlaying] = useState(false);
   const [output, setOutput] = useState(0.8);
   const [bpm, setBpm] = useState(115);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(2);
   const [maxIter, setMaxIter] = useState(220);
   const [dataSource, setDataSource] = useState<DataSourceKind>("fractal");
   const [patternScale, setPatternScale] = useState(5.5);
-  const [resolution, setResolution] = useState(512);
+  const [resolution, setResolution] = useState(1024);
   const [maxCircles, setMaxCircles] = useState(36);
   const [minRadius, setMinRadius] = useState(4);
   const [maxRadius, setMaxRadius] = useState(18);
@@ -259,7 +259,7 @@ export function FractalCirclePackingDemo() {
           style={{
             width: "100%",
             maxWidth: 520,
-            imageRendering: "pixelated",
+            imageRendering: "auto",
             borderRadius: 4,
             border: "1px solid #1d1d1d",
             display: "block",
@@ -273,9 +273,9 @@ export function FractalCirclePackingDemo() {
       <div className="controls">
         <Slider label="Output" value={output} min={0} max={1} step={0.01} onChange={setOutput} />
         <Slider label="BPM" value={bpm} min={30} max={320} step={1} onChange={setBpm} />
-        <Slider label="Resolution" value={resolution} min={96} max={512} step={1} onChange={setResolution} />
+        <Slider label="Resolution" value={resolution} min={96} max={1024} step={1} onChange={setResolution} />
         <Slider label="Max Iter" value={maxIter} min={40} max={500} step={1} onChange={setMaxIter} />
-        <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
+        <Slider label="Zoom" value={zoom} min={0} max={2} step={0.001} onChange={setZoom} />
         <div className="presets">
           <span className="presets-label">Data</span>
           {(["fractal"] as DataSourceKind[]).map((source) => (

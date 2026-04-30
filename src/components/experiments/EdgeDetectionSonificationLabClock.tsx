@@ -81,7 +81,7 @@ function buildGraph(
 export function EdgeDetectionSonificationLabClock() {
   const [playing, setPlaying] = useState(false);
   const [output, setOutput] = useState(0.64);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(2);
   const [maxIter, setMaxIter] = useState(220);
   const [dataSource, setDataSource] = useState<DataSourceKind>("fractal");
   const [patternScale, setPatternScale] = useState(5.5);
@@ -90,7 +90,7 @@ export function EdgeDetectionSonificationLabClock() {
   const [fractalType, setFractalType] = useState<FractalKind>("mandelbrot");
   const [juliaCx, setJuliaCx] = useState(-0.8);
   const [juliaCy, setJuliaCy] = useState(0.156);
-  const [resolution, setResolution] = useState(320);
+  const [resolution, setResolution] = useState(640);
   const [lanes, setLanes] = useState(24);
   const [steps, setSteps] = useState(32);
   const [bpm, setBpm] = useState(110);
@@ -262,7 +262,7 @@ export function EdgeDetectionSonificationLabClock() {
         ref={canvasRef}
         width={frame.width}
         height={frame.height}
-        style={{ width: "100%", maxWidth: 720, imageRendering: "pixelated", border: "1px solid #222", borderRadius: 6 }}
+        style={{ width: "100%", maxWidth: 720, imageRendering: "auto", border: "1px solid #222", borderRadius: 6 }}
       />
 
       <div
@@ -344,8 +344,8 @@ export function EdgeDetectionSonificationLabClock() {
         <Slider label="BPM" value={bpm} min={40} max={260} step={1} onChange={setBpm} />
         <Slider label="Steps" value={steps} min={4} max={64} step={1} onChange={setSteps} />
         <Slider label="Lanes" value={lanes} min={4} max={64} step={1} onChange={setLanes} />
-        <Slider label="Resolution" value={resolution} min={64} max={320} step={1} onChange={setResolution} />
-        <Slider label="Zoom" value={zoom} min={0} max={1} step={0.001} onChange={setZoom} />
+        <Slider label="Resolution" value={resolution} min={64} max={640} step={1} onChange={setResolution} />
+        <Slider label="Zoom" value={zoom} min={0} max={2} step={0.001} onChange={setZoom} />
         <Slider label="Max Iter" value={maxIter} min={40} max={420} step={1} onChange={setMaxIter} />
         <Slider label="Center X" value={centerX} min={-2.2} max={2.2} step={0.00001} onChange={setCenterX} />
         <Slider label="Center Y" value={centerY} min={-2.2} max={2.2} step={0.00001} onChange={setCenterY} />
