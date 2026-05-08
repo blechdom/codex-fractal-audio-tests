@@ -1,190 +1,113 @@
 import Head from "next/head";
 import Link from "next/link";
-import { STRATEGIES } from "@/lib/mandelbrot-sonification";
+
+const ACCENT = "#90caf9";
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>mandelbrot codex</title>
-        <meta name="description" content="15 Mandelbrot sonification demos in Elementary Audio" />
+        <meta name="description" content="WebGPU fractal explorer and archived fractal sonification labs" />
       </Head>
       <div className="page-wide">
         <h1 className="site-title">mandelbrot codex</h1>
-        <h2 className="subtitle">Fractal Sonification Strategies</h2>
-        <p style={{ opacity: 0.72, maxWidth: 760, lineHeight: 1.5 }}>
-          Each demo maps Mandelbrot dynamics to synthesis controls in a different way:
-          scan order, smooth coloring, orbit traps, boundary gradients, distance estimators,
-          multiresolution stacks, and entropy-driven tone/noise blending.
+        <h2 className="subtitle">New Version: GPU Fractal Explorer</h2>
+        <p style={{ opacity: 0.76, maxWidth: 860, lineHeight: 1.5 }}>
+          Fresh start from the WebGPU dual-viewport renderer: higher-resolution fractal rendering,
+          richer coloring schemes, preset coefficients, and an unfurled view kept close to the main
+          Mandelbrot/Julia viewport.
         </p>
 
-        <h2 className="subtitle" style={{ marginTop: "1.4rem" }}>Core Building Blocks</h2>
-        <p style={{ opacity: 0.72, maxWidth: 760, lineHeight: 1.5 }}>
-          Shared modules you can combine: fractal data generation, playback/time application,
-          and audio mapping engines.
-        </p>
-        <div className="experiment-grid" style={{ marginBottom: "1.2rem" }}>
-          <Link href="/models/fractal-data-generator" className="experiment-card">
-            <h3 style={{ color: "#f4a261" }}>Fractal Data Generator</h3>
+        <div className="experiment-grid" style={{ marginTop: "1rem", marginBottom: "1.25rem" }}>
+          <Link href="/fractal-explorer" className="experiment-card">
+            <h3 style={{ color: ACCENT }}>WebGPU Fractal Explorer V1</h3>
             <p>
-              Generate 2D frames from Mandelbrot or Julia sets with shared viewport and point
-              metrics.
+              Main fractal plus unfurled mapping on one WebGPU surface, with expanded colorizers,
+              famous-area presets, higher iteration limits, and editable coefficients by the viewport.
             </p>
-            <span className="tag">model 1</span>
+            <span className="tag">new v1</span>
           </Link>
-          <Link href="/models/fractal-playback-schemes" className="experiment-card">
-            <h3 style={{ color: "#84a59d" }}>Fractal Playback Schemes</h3>
+          <Link href="/julia-boundary-sonification" className="experiment-card">
+            <h3 style={{ color: ACCENT }}>Julia Boundary Sonification</h3>
             <p>
-              Apply time to frames using edge extraction, lane sampling, sequencers, and
-              playhead patterns.
+              Design notes for turning an infinite closed Julia boundary into forward-moving musical
+              time using marching squares, contour loops, external angle, and multiscale traversal.
             </p>
-            <span className="tag">model 2</span>
+            <span className="tag">time on boundary</span>
           </Link>
-          <Link href="/models/audio-engine" className="experiment-card">
-            <h3 style={{ color: "#9d4edd" }}>Audio Engine</h3>
+          <Link href="/time-contour-visualizer" className="experiment-card">
+            <h3 style={{ color: ACCENT }}>Shared Time T Visualizer</h3>
             <p>
-              Map timed data to oscillators, filters, noise, panning, normalization, and soft
-              limiting.
+              A browser drawing of T as shared phase: onion-like paths, moving playheads, and lane
+              strips that show what each layer would trigger over time.
             </p>
-            <span className="tag">model 3</span>
+            <span className="tag">visual explainer</span>
           </Link>
-          <Link href="/labs/recursive-sound/v1-plot-color-playheads" className="experiment-card">
-            <h3 style={{ color: "#ff9f1c" }}>Recursive Sound V1</h3>
+          <Link href="/real-contour-paths" className="experiment-card">
+            <h3 style={{ color: ACCENT }}>Real Contour Path Techniques</h3>
             <p>
-              New lab inspired by recursive-sound: plotting methods, coloring transforms, and
-              playhead geometry on one shared matrix.
+              Compare escape-time, equipotential, distance-estimator, boundary, and color-cycle
+              contours as actual extracted playhead paths.
             </p>
-            <span className="tag">recursive-sound port</span>
+            <span className="tag">real paths</span>
           </Link>
-          <Link href="/labs/recursive-sound/v2-playhead-sonifier" className="experiment-card">
-            <h3 style={{ color: "#72efdd" }}>Recursive Sound V2</h3>
+          <Link href="/stripe-time-flow" className="experiment-card">
+            <h3 style={{ color: ACCENT }}>Stripe Time Flow</h3>
             <p>
-              Playhead-driven sonifier with outline/decomposition coloring modes and directional,
-              radial, and rotational traversals.
+              Treat B/W stripe depth as time: black is sound, white is silence, and fixed contour
+              shapes become the bodies that rhythm, thickness, pitch wiggle, and ornament fit into.
             </p>
-            <span className="tag">playhead sonifier</span>
+            <span className="tag">depth as time</span>
           </Link>
-          <Link href="/labs/recursive-sound/v3-contour-tracer-sonifier" className="experiment-card">
-            <h3 style={{ color: "#80ed99" }}>Recursive Sound V3</h3>
+          <Link href="/striped-staircase" className="experiment-card">
+            <h3 style={{ color: ACCENT }}>Striped Staircase</h3>
             <p>
-              Marching-squares contour tracer with angle/duration contour controls mapped to
-              synthesis.
+              A discrete stripe-time pass where whole threshold intervals become black sounding
+              chunks, then time steps to the next smaller escape-depth stripe.
             </p>
-            <span className="tag">contour tracer</span>
+            <span className="tag">stripe-to-stripe</span>
           </Link>
-          <Link href="/labs/julia-boundary-lab" className="experiment-card">
-            <h3 style={{ color: "#8ecae6" }}>Julia Boundary Lab</h3>
+          <Link href="/gradient-slide" className="experiment-card">
+            <h3 style={{ color: ACCENT }}>Gradient Slide</h3>
             <p>
-              Dedicated Julia boundary extractor and sonifier focused on contour geometry and
-              thresholded boundary motion.
+              Preserves the previous staircase sketch: a continuous active band slides through
+              iteration depth while contours outline the current sounding region.
             </p>
-            <span className="tag">julia boundary</span>
+            <span className="tag">saved version</span>
           </Link>
-        </div>
-
-        <h2 className="subtitle" style={{ marginTop: "0.4rem" }}>Current Demos</h2>
-        <div className="experiment-grid">
-          <Link href="/time-dilation" className="experiment-card">
-            <h3 style={{ color: "#80ed99" }}>Time Dilation</h3>
+          <Link href="/shape-signature-lab" className="experiment-card">
+            <h3 style={{ color: ACCENT }}>Shape Signature Lab</h3>
             <p>
-              Inception-inspired layered time zones: zoom migrates detail between faster and
-              slower rhythmic layers.
+              Normalize contours by arclength and compare relative-angle/curvature waveforms as
+              scale-stable fingerprints for self-similar shapes.
             </p>
-            <span className="tag">layered time zones</span>
+            <span className="tag">relative angle</span>
           </Link>
-          <Link href="/time-dilation-v2" className="experiment-card">
-            <h3 style={{ color: "#72efdd" }}>Time Dilation V2</h3>
+          <Link href="/stripe-time-flow-unfurled" className="experiment-card">
+            <h3 style={{ color: ACCENT }}>Stripe Time Flow: Unfurled</h3>
             <p>
-              Infinite layered playheads with crossfades per zone to mask loop seams while
-              keeping zoom migration behavior.
+              Straighten each contour into a left-to-right body while T drives depth and stripe
+              phase, so black/silence patterns can be read along the shape.
             </p>
-            <span className="tag">infinite layered playheads</span>
+            <span className="tag">unfurled depth</span>
           </Link>
-          <Link href="/time-dilation-v3" className="experiment-card">
-            <h3 style={{ color: "#64dfdf" }}>Time Dilation V3</h3>
+          <Link href="/real-contour-paths-unfurled" className="experiment-card">
+            <h3 style={{ color: ACCENT }}>Real Contour Paths: Unfurled</h3>
             <p>
-              Unfurled mapping default for left-right cyclic continuity, plus infinite layered
-              playheads to reduce loop-point artifacts.
+              Unwrap real contours into playable lanes and show shared playheads traversing each path
+              by normalized arclength.
             </p>
-            <span className="tag">unfurled + infinite</span>
+            <span className="tag">unfurled traversal</span>
           </Link>
-          <Link href="/fractal-circle-packing" className="experiment-card">
-            <h3 style={{ color: "#ff9f1c" }}>Fractal Circle Packing</h3>
+          <Link href="/archive" className="experiment-card">
+            <h3 style={{ color: "#f7b267" }}>Archive</h3>
             <p>
-              Fractal edge structures packed into circles and played as discrete onsets for
-              clearer shape-to-rhythm translation.
+              All previous demos and labs are preserved under archive routes so the new version can
+              start clean without losing the earlier experiments.
             </p>
-            <span className="tag">circle packing rhythm</span>
+            <span className="tag">previous work</span>
           </Link>
-          <Link href="/webgpu-sonification-lab" className="experiment-card">
-            <h3 style={{ color: "#74c0fc" }}>WebGPU Sonification Lab</h3>
-            <p>
-              Isolated, versioned WebGPU sandbox for big changes you can track and
-              recombine without touching stable demos.
-            </p>
-            <span className="tag">webgpu isolated</span>
-          </Link>
-          <Link href="/edge-detection-sonification" className="experiment-card">
-            <h3 style={{ color: "#90e0ef" }}>Edge Detection Sonification Lab</h3>
-            <p>
-              Dedicated edge-map listening demo with three playback modes: clocked, sweep,
-              and burst-on-rise.
-            </p>
-            <span className="tag">edge sonification</span>
-          </Link>
-          <Link href="/edge-detection-sonification-v2-clock" className="experiment-card">
-            <h3 style={{ color: "#bde0fe" }}>Edge Detection Sonification V2 Clock</h3>
-            <p>
-              Clock-optimized edition using Elementary `train + seq` timing for steadier
-              rhythmic triggering independent of UI load.
-            </p>
-            <span className="tag">edge sonification clock optimized</span>
-          </Link>
-          <Link href="/stripe-edge-clocked-onsets" className="experiment-card">
-            <h3 style={{ color: "#f9c74f" }}>Rhythm Demo: Stripe / Edge Clocked Onsets</h3>
-            <p>
-              Frozen frame turned into a transport-clock sequencer. Stripe and edge bits
-              become discrete onsets over step time.
-            </p>
-            <span className="tag">clocked rhythm</span>
-          </Link>
-          <Link href="/stripe-edge-clocked-onsets-v2" className="experiment-card">
-            <h3 style={{ color: "#ffd166" }}>Rhythm Demo: Stripe / Edge Clocked Onsets V2</h3>
-            <p>
-              Cleaner baseline controls with explicit tone/noise balance and straightforward
-              clocked sequencing.
-            </p>
-            <span className="tag">clocked rhythm v2</span>
-          </Link>
-          <Link href="/stripe-edge-clocked-onsets-v3" className="experiment-card">
-            <h3 style={{ color: "#ffe29a" }}>Rhythm Demo: Stripe / Edge Clocked Onsets V3</h3>
-            <p>
-              Advanced version with infinite layered playheads, crossfades, and extra
-              loop-seam smoothing controls.
-            </p>
-            <span className="tag">clocked rhythm v3 advanced</span>
-          </Link>
-          <Link href="/stripe-edge-clocked-onsets-v4" className="experiment-card">
-            <h3 style={{ color: "#fff2b2" }}>Rhythm Demo: Stripe / Edge Clocked Onsets V4</h3>
-            <p>
-              Clock-optimized version that moves sequencer stepping fully into the Elementary
-              graph via `train + seq`.
-            </p>
-            <span className="tag">clocked rhythm v4 audio-clocked</span>
-          </Link>
-          {STRATEGIES.map((strategy, index) => (
-            <Link
-              key={strategy.slug}
-              href={`/demos/${strategy.slug}`}
-              className="experiment-card"
-            >
-              <h3 style={{ color: strategy.accent }}>
-                {index + 1}. {strategy.title}
-              </h3>
-              <p>{strategy.description}</p>
-              <span className="tag">mandelbrot mapping</span>
-            </Link>
-          ))}
         </div>
       </div>
     </>

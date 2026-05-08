@@ -222,6 +222,57 @@ h3 {
   color: #ccc;
 }
 
+.info-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 280px;
+  white-space: normal;
+  background: #111722;
+  border: 1px solid #38465a;
+  color: #e7edf8;
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-transform: none;
+  letter-spacing: normal;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  z-index: 20;
+}
+
+.info-icon::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 3px);
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background: #111722;
+  border-right: 1px solid #38465a;
+  border-bottom: 1px solid #38465a;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  z-index: 21;
+}
+
+.info-icon:hover::after,
+.info-icon:focus-visible::after,
+.info-icon:hover::before,
+.info-icon:focus-visible::before {
+  opacity: 1;
+  visibility: visible;
+}
+
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;

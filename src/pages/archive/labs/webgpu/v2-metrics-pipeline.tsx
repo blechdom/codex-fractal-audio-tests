@@ -8,7 +8,7 @@ export default function WebGpuV2MetricsPipelinePage() {
         <title>{`WebGPU Lab v2 - Metrics Pipeline`}</title>
       </Head>
       <div className="page-narrow">
-        <Link href="/webgpu-sonification-lab" className="back-link">
+        <Link href="/archive/webgpu-sonification-lab" className="back-link">
           ← webgpu sonification lab
         </Link>
         <h1 className="site-title" style={{ color: "#8ecae6" }}>

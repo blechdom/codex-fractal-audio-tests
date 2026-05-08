@@ -14,7 +14,7 @@ export default function WebGpuV1BaselinePage() {
         <title>{`WebGPU Lab v1 - Baseline`}</title>
       </Head>
       <div className="page-narrow">
-        <Link href="/webgpu-sonification-lab" className="back-link">
+        <Link href="/archive/webgpu-sonification-lab" className="back-link">
           ← webgpu sonification lab
         </Link>
         <h1 className="site-title" style={{ color: "#74c0fc" }}>

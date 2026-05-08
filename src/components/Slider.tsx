@@ -5,6 +5,7 @@ interface SliderProps {
   max: number;
   step: number;
   unit?: string;
+  info?: string;
   /** Power-law exponent. >1 gives more resolution near min (or zero for bipolar). Default 1 (linear). */
   curve?: number;
   onChange: (v: number) => void;
@@ -19,6 +20,7 @@ export function Slider({
   max,
   step,
   unit,
+  info,
   curve = 1,
   onChange,
 }: SliderProps) {
@@ -68,7 +70,36 @@ export function Slider({
 
   return (
     <div className="slider-row">
-      <label className="slider-label">{label}</label>
+      <label className="slider-label" style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+        <span>{label}</span>
+        {info && (
+          <span
+            className="info-icon"
+            data-tooltip={info}
+            aria-label={info}
+            tabIndex={0}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 15,
+              height: 15,
+              borderRadius: "50%",
+              border: "1px solid #4a5870",
+              color: "#90caf9",
+              fontSize: "0.62rem",
+              fontWeight: 700,
+              lineHeight: 1,
+              cursor: "help",
+              textTransform: "none",
+              letterSpacing: 0,
+              position: "relative",
+            }}
+          >
+            i
+          </span>
+        )}
+      </label>
       <input
         type="range"
         min={min}
